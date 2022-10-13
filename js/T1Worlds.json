@@ -27,10 +27,10 @@
     "dx": 90,
     "dy": 30},
     "encoding": {
-            "text": {"field": "Present", "type": "quantitative"},
+            "text": {"field": "Type", "type": "quantitative"},
             "opacity": {
                 "condition": {
-                "test": "datum['Team'] == 'SKT T1'",
+                "test": "datum['Type'] == 'Present'",
                 "value": 1
                 },
                 "value": 0
@@ -42,10 +42,10 @@
         "dx": 10,
         "dy": -5},
         "encoding": {
-                "text": {"field": "Won", "type": "quantitative"},
+                "text": {"field": "Stats", "type": "quantitative"},
                 "opacity": {
                     "condition": {
-                    "test": "datum['Team'] == 'SKT T1'",
+                    "test": "datum['Type'] == 'Wins'",
                     "value": 1
                     },
                     "value": 0
