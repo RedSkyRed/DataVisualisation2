@@ -19,15 +19,15 @@
         },
           {
             "data": {
-              "url": "data/generalstats2022.csv"
+              "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/generalstats2022.csv"
             },
             "transform": [
-              {"filter": {"field": "Name", "equal": "Worlds 2022"}},
+              {"filter": {"field": "Progress", "equal": "Worlds 2022"}},
               {
-                "lookup": "Name",
+                "lookup": "Progress",
                 "from": {
                   "data": {
-                    "url": "data/locations2022.csv"
+                    "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/locations2022.csv"
                   },
                   "key": "Name",
                   "fields": ["latitude", "longitude"]
@@ -35,10 +35,10 @@
                 "as": ["origin_latitude", "origin_longitude"]
               },
               {
-                "lookup": "Name",
+                "lookup": "Teams",
                 "from": {
                   "data": {
-                    "url": "data/airports.csv"
+                    "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/locations2022.csv"
                   },
                   "key": "Name",
                   "fields": ["latitude", "longitude"]
