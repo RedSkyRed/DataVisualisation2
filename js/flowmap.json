@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 450,
-    "title": "Yeet",
+    "width": 1500,
+    "height": 400,
+    "title": "Teams Qualified for Worlds 2022",
     "projection": {"type": "equalEarth"},
     "layer": [
         {
@@ -17,7 +17,7 @@
         "fill": "lightgray", 
         "stroke": "white"}
         },
-          {
+        {
             "data": {
               "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/generalstats2022.csv"
             },
@@ -30,7 +30,7 @@
                     "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/locations2022.csv"
                   },
                   "key": "Name",
-                  "fields": ["latitude", "longitude"]
+                  "fields": ["Latitude", "Longitude"]
                 },
                 "as": ["origin_latitude", "origin_longitude"]
               },
@@ -41,7 +41,7 @@
                     "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/locations2022.csv"
                   },
                   "key": "Name",
-                  "fields": ["latitude", "longitude"]
+                  "fields": ["Latitude", "Longitude"]
                 },
                 "as": ["dest_latitude", "dest_longitude"]
               }
@@ -58,9 +58,94 @@
                 "type": "quantitative"
               },
               "longitude2": {"field": "dest_longitude"},
-              "latitude2": {"field": "dest_latitude"}
+              "latitude2": {"field": "dest_latitude"},
+              "color": {
+                "condition": 
+                    {"test": "datum['Teams'] == 'SKT T1'", "value": "red"},
+                "value": "grey"
+              }
             }
+        },
+        {
+        "data": {
+            "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/generalstats2022.csv"
+          },
+          "transform": [
+            {
+              "lookup": "Teams",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/locations2022.csv"
+                },
+                "key": "Name",
+                "fields": ["Latitude", "Longitude"]
+              }
+            }
+          ],
+          "projection": {"type": "equalEarth"},
+          "mark": "circle",
+          "encoding": {
+            "longitude": {
+              "field": "Longitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "Latitude",
+              "type": "quantitative"
+            },
+            "size": {
+                "field": "WinLoss",
+                "type": "quantitative",
+                "title": "Win Rate 2022",
+                "scale": {"range": [1000,5000], "domain": [0.6, 0.8]}
+                },                
+            "color": {
+              "condition": 
+                  {"test": "datum['Teams'] == 'SKT T1'", "value": "red"},
+              "value": "grey"
+            },
+            "opacity": {
+                "condition": {
+                "test": "datum['Teams'] == 'SKT T1'",
+                "value": 1
+                },
+                "value": 0.5
+                    }
           }
+        },
+            {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/locations2022.csv"
+                  },
+                "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dy": 30,
+                "dx": 15,
+                "fontSize": 11.5,
+                "fontStyle": "italic"
+                },
+                "encoding": {
+                "text": {"field": "Name", "type": "nominal"},
+                "color": {"value": "black"},
+                "opacity": {
+                "condition": {
+                "test": "datum['Name'] == 'SKT T1' || datum['Name'] == 'Worlds 2022'",
+                "value": 1
+                },
+                "value": 0
+                    },
+                "longitude": {
+                    "field": "Longitude",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "Latitude",
+                    "type": "quantitative"
+                }
+                }       
+            }
         ]
 }
   
