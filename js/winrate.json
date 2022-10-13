@@ -1,16 +1,25 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": { "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/FakerPastPerformance.csv"},
+    "data": { "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/FakerWinOrLose.csv"},
+    "transform": [
+        {"calculate": "datum['WinOrLose'] == 'Win' ? 'Win' : 'Lose'", "as": "Win/Loss"}
+      ],
+    "title": "Lifetime Performance at Worlds",
     "mark": "bar",
     "encoding": {
       "y": {
-        "field": "WinRate",
+        "aggregate": "sum", "field": "Value",
         "type": "quantitative",
         "title": "Percentage of Wins",
         "stack":"normalize"
       },
-      "x": {"field": "Worlds",
-        "type": "nominal"}
+      "x": {"field": "Year",
+        "type": "nominal"
+        },
+        "color": {
+            "field": "Win/Loss",
+            "scale": {"range": ["#154c79", "#f03532"]}
+          }
     }
   }
   

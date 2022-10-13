@@ -1,0 +1,11 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "KDA from each Worlds Game",
+    "data": {"url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/FakerPastPerformance.csv"},
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Worlds", "type": "temporal"},
+      "y": {"field": "KDA", "type": "quantitative"}
+    }
+  }
+  
