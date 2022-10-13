@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1500,
+    "width": 1000,
     "height": 400,
     "title": "Teams Qualified for Worlds 2022",
     "projection": {"type": "equalEarth"},
