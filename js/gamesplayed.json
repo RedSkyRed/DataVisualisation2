@@ -1,0 +1,13 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple bar chart with embedded data.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/js/ne_110m.json"
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "Player", "type": "nominal", "axis": {"labelAngle": 0}},
+      "y": {"field": "Games Played At Worlds", "type": "quantitative"}
+    }
+  }
+  
