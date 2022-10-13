@@ -2,12 +2,12 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": { "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/FakerPastPerformance.csv"},
     "mark": "bar",
-    "width": {"step": 6},
     "encoding": {
       "y": {
         "field": "WinRate",
         "type": "quantitative",
-        "title": "Percentage of Wins"
+        "title": "Percentage of Wins",
+        "stack":"normalize"
       },
       "x": {"field": "Worlds",
         "type": "nominal"}
