@@ -96,12 +96,28 @@
             "size": {
                 "field": "WinLoss",
                 "type": "quantitative",
-                "title": "Win Rate 2022",
+                "title": "Win/Loss Ratio 2022",
                 "scale": {"range": [1000,5000], "domain": [0.6, 0.8]}
                 },                
             "color": {
-              "condition": 
+              "condition": [
                   {"test": "datum['Teams'] == 'SKT T1'", "value": "red"},
+                  {"test": "datum['Teams'] == 'Fnatic'", "value": "orange"},
+                  {"test": "datum['Teams'] == 'CTBC Flying Oyster'", "value": "blue"},
+                  {"test": "datum['Teams'] == 'Edward Gaming'", "value": "black"},
+                  {"test": "datum['Teams'] == 'Cloud9'", "value": "teal"},
+                  {"test": "datum['Teams'] == 'JD Gaming'", "value": "black"},
+                  {"test": "datum['Teams'] == 'DWG KIA'", "value": "teal"},
+                  {"test": "datum['Teams'] == 'G2 Esports'", "value": "grey"},
+                  {"test": "datum['Teams'] == 'Evil Geniuses'", "value": "#020433"},
+                  {"test": "datum['Teams'] == 'Rogue'", "value": "#1aa5db"},
+                  {"test": "datum['Teams'] == 'DRX'", "value": "#4281f5"},
+                  {"test": "datum['Teams'] == 'Top Esports'", "value": "#d44326"},
+                  {"test": "datum['Teams'] == 'GAM Esports'", "value": "Yellow"},
+                  {"test": "datum['Teams'] == 'Royal Never Give Up'", "value": "#c7984e"},
+                  {"test": "datum['Teams'] == 'Gen.G'", "value": "#f0921f"},
+                  {"test": "datum['Teams'] == 'Gen.G'", "value": "#f22e2e"}
+              ],
               "value": "grey"
             },
             "opacity": {
@@ -109,8 +125,14 @@
                 "test": "datum['Teams'] == 'SKT T1'",
                 "value": 1
                 },
-                "value": 0.5
-                    }
+                "value": 0.4
+                    },
+            "tooltip": [
+                {"field": "Teams", "type": "nominal"},
+                {"field": "Wins", "type": "quantitative", "format": ","},
+                {"field": "Losses", "type": "quantitative", "format": ","},
+                {"field": "WinLoss", "type": "quantitative", "format": ","}
+            ]
           }
         },
             {
@@ -122,7 +144,7 @@
                 "align": "left",
                 "baseline": "middle",
                 "dy": 30,
-                "dx": 15,
+                "dx": 20,
                 "fontSize": 11.5,
                 "fontStyle": "italic"
                 },
