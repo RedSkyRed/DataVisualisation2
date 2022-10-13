@@ -1,12 +1,63 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A simple pie chart with embedded data.",
-    "data": {
+    "data": { "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/SKTWorldsPerformance.csv"},
+    "title": "SKT's Presence at Worlds",
+    "layer": [
+        {
+        "mark": {"type": "arc", "radius": 50, "innerRadius": 25},
+        "encoding": {
+            "theta": {"field": "Won", "type": "quantitative"},
+            "color": {
+                "condition": {"test": "datum['Team'] == 'SKT T1'", "value": "#fac132"}, "value": "#1f1c1c"},
+            "opacity": {
+                    "condition": {
+                    "test": "datum['Team'] == 'SKT T1'",
+                    "value": 1
+                    },
+                    "value": 0
+                        }
+            }
     },
-    "mark": "arc",
+    {
+    "mark": {"type": "arc", "innerRadius": 55, "outerRadius": 80},
     "encoding": {
-      "theta": {"field": "value", "type": "quantitative"},
-      "color": {"field": "category", "type": "nominal"}
+        "theta": {"field": "Present", "type": "quantitative"},
+        "color": {
+            "condition": {"test": "datum['Team'] == 'SKT T1'", "value": "#f03532"}, "value": "#1f1c1c"
+        }
     }
+    },
+    {
+    "mark": {"type": "text",
+    "dx": 90,
+    "dy": 30},
+    "encoding": {
+            "text": {"field": "Present", "type": "quantitative"},
+            "opacity": {
+                "condition": {
+                "test": "datum['Team'] == 'SKT T1'",
+                "value": 1
+                },
+                "value": 0
+            }
+        }
+    },
+    {
+        "mark": {"type": "text",
+        "dx": 10,
+        "dy": -5},
+        "encoding": {
+                "text": {"field": "Won", "type": "quantitative"},
+                "opacity": {
+                    "condition": {
+                    "test": "datum['Team'] == 'SKT T1'",
+                    "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        }
+    ]
   }
   
