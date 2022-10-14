@@ -29,7 +29,7 @@
     "encoding": {
         "theta": {"field": "Stats", "type": "quantitative"},
         "color": {
-            "condition": {"test": "datum['Type'] == 'Present'", "value": "#f03532"}, "value": "#1f1c1c"
+            "condition": {"test": "datum['Type'] == 'Present'", "value": "#f03532"}, "value": "#1f1c1c", "legend":{"orient": "right"}
         },
         "tooltip": [
             {"field": "Type", "type": "nominal"},
@@ -60,6 +60,7 @@
                 }
             }
         }
-    ]
+    ],
+    "resolve": {"scale": {"theta": "independent"}}
   }
   
