@@ -10,7 +10,11 @@
     "mark": "bar",
     "encoding": {
       "x": {"field": "Player", "type": "nominal", "axis": {"labelAngle": 0}, "sort": "-y"},
-      "y": {"field": "Games Played At Worlds", "type": "quantitative"}
+      "y": {"field": "Games Played At Worlds", "type": "quantitative"},
+      "tooltip": [
+        {"field": "Player", "type": "nominal"},
+        {"field": "Games Played At Worlds", "type": "quantitative", "format": ","}
+    ]
   }
 }
   

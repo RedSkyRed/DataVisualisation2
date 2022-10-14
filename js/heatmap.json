@@ -5,7 +5,7 @@
     "data": {
         "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/Top8TeamsPerformance.csv"
     },
-    "title": "Top 8 Teams Performance",
+    "title": "Top 8 Teams Performance in 2022",
     "config": {
         "view": {
             "strokeWidth": 0,
@@ -20,8 +20,9 @@
         "x": {
             "field": "TeamsTop8",
             "type": "nominal",
-            "title": "Teams"
-        },
+            "title": "Teams",
+            "sort": ["SKT T1"]
+            },
         "y": {
             "field": "Position",
             "type": "nominal",
@@ -30,10 +31,19 @@
         "color": {
             "field": "Avg KDA",
             "type": "quantitative",
-            "scale": {"scheme":"darkgold"},
+            "scale": {"scheme":"darkgold", "domain":[3,8]},
             "legend": {
-                "title": null
+                "title": "KDA Average"
             }
-        }
+        },
+        "tooltip": [
+            {"field": "TeamsTop8", "type": "nominal", "title": "Team"},
+            {"field": "Player", "type": "nominal"},
+            {"field": "Position", "type": "nominal"},
+            {"field": "Total Kills", "type": "quantitative", "format": ","},
+            {"field": "Total Deaths", "type": "quantitative", "format": ","},
+            {"field": "Total Assists", "type": "quantitative", "format": ","},
+            {"field": "Avg KDA", "type": "quantitative", "format": ","}
+        ]
     }
   }

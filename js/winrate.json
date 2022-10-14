@@ -19,7 +19,11 @@
         "color": {
             "field": "Win/Loss",
             "scale": {"range": ["#1f1c1c", "#fab002"]}
-          }
+          },
+          "tooltip": [
+            {"field": "Year", "type": "nominal"},
+            {"field": "Win/Loss", "type": "quantitative", "format": ","}
+        ]
     }
   }
   
