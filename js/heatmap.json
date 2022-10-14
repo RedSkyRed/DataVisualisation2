@@ -1,13 +1,15 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 300,
     "data": {
-        "url": "data/seattle-weather.csv"
+        "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/Top8TeamsPerformance.csv"
     },
-    "title": "Daily Max Temperatures (C) in Seattle, WA",
+    "title": "Top 8 Teams Performance",
     "config": {
         "view": {
             "strokeWidth": 0,
-            "step": 13
+            "step": 8
         },
         "axis": {
             "domain": false
@@ -16,25 +18,19 @@
     "mark": "rect",
     "encoding": {
         "x": {
-            "field": "date",
-            "timeUnit": "date",
-            "type": "ordinal",
-            "title": "Day",
-            "axis": {
-                "labelAngle": 0,
-                "format": "%e"
-            }
+            "field": "TeamsTop8",
+            "type": "nominal",
+            "title": "Teams"
         },
         "y": {
-            "field": "date",
-            "timeUnit": "month",
-            "type": "ordinal",
-            "title": "Month"
+            "field": "Position",
+            "type": "nominal",
+            "title": "Position"
         },
         "color": {
-            "field": "temp_max",
-            "aggregate": "max",
+            "field": "Avg KDA",
             "type": "quantitative",
+            "scale": {"scheme":"darkgold"},
             "legend": {
                 "title": null
             }
