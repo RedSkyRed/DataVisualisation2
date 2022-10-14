@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A simple bar chart with embedded data.",
-    "width": 1000,
+    "width": 700,
     "height": 400,
     "title": "Highest Number of Games Played at Worlds by Player",
     "data": {
@@ -9,11 +9,8 @@
     },
     "mark": "bar",
     "encoding": {
-      "x": {"field": "Player", "type": "nominal", "axis": {"labelAngle": 0}},
-      "y": {"field": "Games Played At Worlds", "type": "quantitative"},
-      "color": {
-        "condition": {"test": "datum['Player'] == 'Faker'", "value": "#f03532"}, "value": "#154c79"
-    }
+      "x": {"field": "Player", "type": "nominal", "axis": {"labelAngle": 0}, "sort": "-y"},
+      "y": {"field": "Games Played At Worlds", "type": "quantitative"}
   }
 }
   

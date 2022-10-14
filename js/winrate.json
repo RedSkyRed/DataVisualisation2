@@ -18,7 +18,7 @@
         },
         "color": {
             "field": "Win/Loss",
-            "scale": {"range": ["#154c79", "#f03532"]}
+            "scale": {"range": ["#1f1c1c", "#fab002"]}
           }
     }
   }

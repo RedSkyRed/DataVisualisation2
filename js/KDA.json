@@ -4,7 +4,7 @@
     "data": {"url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/FakerPastPerformance.csv"},
     "mark": "line",
     "encoding": {
-      "x": {"field": "Worlds", "type": "temporal"},
+      "x": {"field": "Worlds", "type": "ordinal"},
       "y": {"field": "KDA", "type": "quantitative"}
     }
   }
