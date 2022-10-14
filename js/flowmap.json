@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 700,
     "height": 300,
-    "title": "Teams Qualified for Worlds 2022",
+    "title": "Teams that Qualified for Worlds 2022",
     "projection": {"type": "equalEarth"},
     "layer": [
         {
@@ -75,25 +75,12 @@
                 "scale": {"range": [0,1000], "domain": [0.5, 0.8]}
                 },                
             "color": {
-              "condition": [
-                  {"test": "datum['Teams'] == 'SKT T1'", "value": "red"},
-                  {"test": "datum['Teams'] == 'Fnatic'", "value": "orange"},
-                  {"test": "datum['Teams'] == 'CTBC Flying Oyster'", "value": "blue"},
-                  {"test": "datum['Teams'] == 'Edward Gaming'", "value": "black"},
-                  {"test": "datum['Teams'] == 'Cloud9'", "value": "teal"},
-                  {"test": "datum['Teams'] == 'JD Gaming'", "value": "black"},
-                  {"test": "datum['Teams'] == 'DWG KIA'", "value": "teal"},
-                  {"test": "datum['Teams'] == 'G2 Esports'", "value": "grey"},
-                  {"test": "datum['Teams'] == 'Evil Geniuses'", "value": "#020433"},
-                  {"test": "datum['Teams'] == 'Rogue'", "value": "#1aa5db"},
-                  {"test": "datum['Teams'] == 'DRX'", "value": "#4281f5"},
-                  {"test": "datum['Teams'] == 'Top Esports'", "value": "#d44326"},
-                  {"test": "datum['Teams'] == 'GAM Esports'", "value": "Yellow"},
-                  {"test": "datum['Teams'] == 'Royal Never Give Up'", "value": "#c7984e"},
-                  {"test": "datum['Teams'] == 'Gen.G'", "value": "#f0921f"},
-                  {"test": "datum['Teams'] == '100 Thieves'", "value": "#f22e2e"}
-              ],
-              "value": "grey"
+              "field": "Teams", "type": "nominal",
+              "scale": {
+                "domain": ["SKT T1", "Fnatic","CTBC Flying Oyster","Edward Gaming", "Cloud9", "JD Gaming", "DWG KIA", "G2 Esports", "Evil Geniuses", "Rogue", "DRX", "Top Esports", "GAM Esports", "Royal Never Give Up", "Gen.G", "100 Thieves"],
+               "range":["#f03532", "orange", "blue", "black", "teal", "black", "teal", "grey", "#020433", "#1aa5db", "#4281f5", "#d44326", "yellow", "#c7984e", "#f0921f", "#f22e2e"]
+              },
+              "legend": {"direction": "vertical", "orient": "left"}
             },
             "opacity": {
                 "condition": {
@@ -153,12 +140,16 @@
             "latitude2": {"field": "dest_latitude"},
             "color": {
               "condition": 
-                  {"test": "datum['Teams'] == 'SKT T1'", "value": "red"},
+                  {"test": "datum['Teams'] == 'SKT T1'", "value": "#f03532"},
               "value": "grey"
             },
             "size": {
               "condition":
-                {"test": "datum['Teams'] == 'SKT T1'", "value": 5}, "value":0.5
+                {"test": "datum['Teams'] == 'SKT T1'", "value": 5}, "value":1
+            },
+            "opacity": {
+              "condition":
+                {"test": "datum['Teams'] == 'SKT T1'", "value": 1}, "value":0.5
             }
           }
       },
