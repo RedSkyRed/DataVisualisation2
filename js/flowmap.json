@@ -1,13 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1000,
+    "width": 700,
     "height": 400,
     "title": "Teams Qualified for Worlds 2022",
     "projection": {"type": "equalEarth"},
     "layer": [
         {
         "data": {
-        "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/js/ne_110m.json",
+        "url": "ne_110m.json",
         "format": {
             "type": "topojson", 
             "feature": "ne_110m_admin_0_countries"}
@@ -95,7 +95,7 @@
                 "field": "WinToLoss",
                 "type": "quantitative",
                 "title": "Win/Loss Ratio 2022",
-                "scale": {"range": [1000,5000], "domain": [0.6, 0.8]}
+                "scale": {"range": [0,1000], "domain": [0.6, 0.8]}
                 },                
             "color": {
               "condition": [
