@@ -3,11 +3,25 @@ body {
     background-color: #bab09c;
 }
 
+p {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 1em;
+}
+
+h2 {
+    padding-left: 1em
+}
+
+.pure-g {
+    margin: 0 0.5rem;
+}
+
 .header {
     background-color: #f03532;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1140px;
+    max-width: 1027px;
     padding: 0%;
     margin-top: 10px;
     padding-top: 20px;
@@ -18,7 +32,7 @@ body {
     background-color: white;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1140px;
+    max-width: 1027px;
 }
 
 #logo {
@@ -26,6 +40,15 @@ body {
     margin-bottom: 10px;
     border-bottom: 10px;
     float:right;
+}
+
+#portrait {
+    float: right;
+}
+
+#flow_map {
+    padding: 2em;
+    justify-content: center;
 }
 
 @media screen and (min-width: 48em)

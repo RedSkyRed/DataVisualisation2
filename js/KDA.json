@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Faker's Peformance across World's Games",
+    "title": "KDA at Worlds",
     "data": {"url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/FakerPastPerformance.csv"},
     "mark": "line",
     "encoding": {
