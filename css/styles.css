@@ -47,8 +47,10 @@ p {
 }
 
 #winrate {
-    float: right;
+    float: left;
 }
+
+
 
 @media screen and (min-width: 48em)
 {

@@ -1,5 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 200,
     "data": { "url": "https://raw.githubusercontent.com/RedSkyRed/DataVisualisation2/main/data/FakerWinOrLose.csv"},
     "transform": [
         {"calculate": "datum['WinOrLose'] == 'Win' ? 'Win' : 'Lose'", "as": "Win/Loss"}
