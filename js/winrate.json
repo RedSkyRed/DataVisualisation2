@@ -22,7 +22,8 @@
           },
           "tooltip": [
             {"field": "Year", "type": "nominal"},
-            {"field": "Win/Loss", "type": "quantitative", "format": ","}
+            {"field": "WinOrLose", "type": "nominal"},
+            {"field": "Value", "type": "quantitative", "format": ","}
         ]
     }
   }

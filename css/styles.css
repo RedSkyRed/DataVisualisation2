@@ -3,18 +3,12 @@ body {
     background-color: #bab09c;
 }
 
+h2, h3 {
+}
+
 p {
     margin-bottom: 10px;
     margin-top: 10px;
-    padding: 1em;
-}
-
-h2 {
-    padding-left: 1em
-}
-
-.pure-g {
-    margin: 0 0.5rem;
 }
 
 .header {
@@ -29,6 +23,7 @@ h2 {
 
 .content {
     padding: 2em;
+    padding-left: 4em;
     background-color: white;
     margin-left: auto;
     margin-right: auto;
@@ -42,19 +37,23 @@ h2 {
     float:right;
 }
 
-#portrait {
-    float: right;
-}
-
 #flow_map {
     padding: 2em;
     justify-content: center;
 }
 
+#kda {
+    float: right;
+}
+
+#winrate {
+    float: right;
+}
+
 @media screen and (min-width: 48em)
 {
 .content, .header {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 3em;
+    padding-right: 3em;
 }
 }
